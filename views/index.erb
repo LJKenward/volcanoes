@@ -1,0 +1,18 @@
+<h1>hello dangerous world</h1>
+
+<!-- Make New Volcanoe Link -->
+<a href ="/volcanoes/new">Add New Volcanoe</a>
+
+
+<!-- Loop through and display each volanoe with details -->
+<% @all_volcanoes.each do |volcanoe|%>
+
+<p>
+  <a href="/all_volcanoes/<%= volcanoe['id'] %> "><%= volcanoe['name'] %></a>
+    <%= volcanoe['height'] %>
+    <%= volcanoe['status'] %>
+  
+</p>
+
+<img src="<%= volcanoe['image_url'] %>">
+<% end %>
