@@ -11,6 +11,17 @@
   <label for "">Status</label>
   <input type="text" name="status">
 
+  <label for ="">volcanoe_region</label>
+  <select name="volcanoe_region_id" id="">
+
+    <% @volcanoe_regions.each do |volcanoe_region| %>
+    
+    <option value="<%= volcanoe_region.id %>">
+      <%= volcanoe_region.name %>
+    </option>
+    <% end %>
+  </select>
+
   <button>Add New Volcanoe</button>
 </form>
 

@@ -1,7 +1,30 @@
+<link rel="stylesheet" href="stylesheets/main.css" />
+
 <h1>the volcanoe<h1>
 
- <p> <%= @single_volcanoe["name"] %> </p>
-<img src="<%= @single_volcanoe['image_url'] %>">
+ <p> <%= @single_volcanoe.name %> </p>
+<img src="<%= @single_volcanoe.image_url %>" alt="">
 
-<a href="/volcanoes/<%= @single_volcanoe['id'] %>/edit">Edit Volcanoe</a>
 
+
+<a href="/volcanoes/<%= @single_volcanoe.id %>/edit">Edit Volcanoe</a>
+
+<form actions="/volcanoes/ <%= @single_volcanoe.id %>" method="post">
+  <input type="hidden" value="delete" name="_method">
+  <button>Delete</button>
+</form>
+
+<h2>Comments</h2>
+
+<% @comments.each do |comment| %>
+<p><%= comment.body %></p>
+
+<% end %>
+
+
+<form action="/volcanoes/<%= @single_volcanoe.id%>/comments" method="post">
+  <textarea name="body">
+
+  </textarea>
+  <button> post </button>
+  <form>

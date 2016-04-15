@@ -1,16 +1,39 @@
-<form action ="/volcanoes/<%= @single_volcanoe['id'] %>" method="post">
+
+
+<form action ="/volcanoes/<%= @single_volcanoe.id %>" method="post">
   <input type="hidden" name="_method" value="patch">
   <label for="">Name</label>
-  <input type="text" name="name" value="<%= @single_volcanoe['name'] %>">
+  <input type="text" name="name" value="<%= @single_volcanoe.name %>">
 
   <label for="">Image Url<label>
-  <input type="text" name="image_url" value="<%= @single_volcanoe['image_url'] %>">
+  <input type="text" name="image_url" value="<%= @single_volcanoe.image_url %>">
 
   <label for "">Height</label>
-  <input type="text" name="height" value="<%= @single_volcanoe['height'] %>">
+  <input type="text" name="height" value="<%= @single_volcanoe.height %>">
 
   <label for "">Status</label>
-  <input type="text" name="status" value="<%= @single_volcanoe['status'] %>">
+  <input type="text" name="status" value="<%= @single_volcanoe.status %>">
+
+<label for ="">volcanoe_region</label>
+  <select name="volcanoe_region_id" id="">
+
+    <% @volcanoe_regions.each do |volcanoe_region| %>
+    
+    <% if volcanoe_region.id == @single_volcanoe.volcanoe_region_id %>
+
+    <option value="<%= volcanoe_region.id %>" selected>
+      <%= volcanoe_region.name %>
+    </option>
+
+    <% else %>
+ 
+    <option value="<%= volcanoe_region.id %>">
+      <%= volcanoe_region.name %>
+    </option>
+
+    <% end %>
+    <% end %>
+  </select>
 
   <button> Update Volcanoe </button>
 

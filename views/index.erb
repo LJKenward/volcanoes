@@ -1,18 +1,82 @@
-<h1>hello dangerous world</h1>
-
-<!-- Make New Volcanoe Link -->
-<a href ="/volcanoes/new">Add New Volcanoe</a>
-
-
-<!-- Loop through and display each volanoe with details -->
-<% @all_volcanoes.each do |volcanoe|%>
-
-<p>
-  <a href="/all_volcanoes/<%= volcanoe['id'] %> "><%= volcanoe['name'] %></a>
-    <%= volcanoe['height'] %>
-    <%= volcanoe['status'] %>
+<ul>
   
-</p>
+  <li><a href="/"> ALL </a></li>
+  <% @volcanoe_regions.each do |volcanoe_regions| %>
 
-<img src="<%= volcanoe['image_url'] %>">
-<% end %>
+  <li><a href="/?id=<%= volcanoe_regions.id %>"><%= volcanoe_regions.name %></a></li>
+
+  <% end %>
+
+
+<!-- Main -->
+          <section id="main">
+
+            <!-- Thumbnails -->
+              <section class="thumbnails">
+                <div>
+                  <% @all_volcanoes.each do |volcanoe|%>
+                    <div><a href="/all_volcanoes/<%= volcanoe.id %> "><h3><%= volcanoe.name %></h3>
+                    <img src="<%= volcanoe.image_url %>"></a></div>
+                  <% end %>
+                  <!-- <a href="images/fulls/01.jpg">
+                    <img src="images/thumbs/01.jpg" alt="" />
+                    <h3>Lorem ipsum dolor sit amet</h3>
+                  </a>
+                  <a href="images/fulls/02.jpg">
+                    <img src="images/thumbs/02.jpg" alt="" />
+                    <h3>Lorem ipsum dolor sit amet</h3>
+                  </a>
+                </div>
+                <div>
+                  <a href="images/fulls/03.jpg">
+                    <img src="images/thumbs/03.jpg" alt="" />
+                    <h3>Lorem ipsum dolor sit amet</h3>
+                  </a>
+                  <a href="images/fulls/04.jpg">
+                    <img src="images/thumbs/04.jpg" alt="" />
+                    <h3>Lorem ipsum dolor sit amet</h3>
+                  </a>
+                  <a href="images/fulls/05.jpg">
+                    <img src="images/thumbs/05.jpg" alt="" />
+                    <h3>Lorem ipsum dolor sit amet</h3>
+                  </a>
+                </div>
+                <div>
+                  <a href="images/fulls/06.jpg">
+                    <img src="images/thumbs/06.jpg" alt="" />
+                    <h3>Lorem ipsum dolor sit amet</h3>
+                  </a>
+                  <a href="images/fulls/07.jpg">
+                    <img src="images/thumbs/07.jpg" alt="" />
+                    <h3>Lorem ipsum dolor sit amet</h3>
+                  </a> -->
+                
+              </section>
+
+          </section>
+
+      
+
+      </div>
+
+    <!-- Scripts -->
+      <!-- // <script src="assets/js/jquery.min.js"></script>
+      // <script src="assets/js/jquery.poptrox.min.js"></script>
+      // <script src="assets/js/skel.min.js"></script>
+      // <script src="assets/js/main.js"></script> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
